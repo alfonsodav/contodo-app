@@ -1,0 +1,7 @@
+{
+  "name": "contodo-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

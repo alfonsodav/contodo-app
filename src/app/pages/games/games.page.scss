@@ -1,0 +1,47 @@
+.fondo-trivia {
+  background-position: left 50% top 0 !important;
+  background-image: url("/../../../assets/images/fondo-trivia.png");
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  --background: transparent !important;
+  --offset-top: -20% !important;
+}
+.puntaje {
+  display: flex;
+  border-radius: 1rem;
+  padding: 1rem;
+  justify-content: center;
+  .icon-game {
+    color: white;
+    background-color: #400a81;
+    font-size: 3rem;
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    padding: 10px;
+    margin: auto;
+  }
+  ion-text{
+    margin: auto;
+    
+    text-align: center;
+    h1{
+      margin: auto;
+      font-family: coco;
+    }
+  }
+  .logo{
+    width: 5rem;
+    height: 4rem;
+    padding: 5px;
+    margin: auto;
+  }
+}
+ion-slides {
+  height: 100%;
+}
+ion-slide {
+  display: block;
+}

@@ -1,0 +1,117 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import "~@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+.fondo-azul {
+  //background-position: left 45% top 0 !important;
+  background-image: url("assets/images/fondo-azul.svg");
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+}
+.contodo-button {
+  border: #ffff38 solid 5pt;
+  border-radius: 1rem;
+  color: #ff5b00;
+  margin: auto;
+  font-family: coco;
+  button {
+    padding: 1rem;
+    color: #ff5b00 !important;
+    span {
+      color: #ff5b00 !important;
+    }
+  }
+}
+.salir-button {
+  border: #ffff38 solid 5pt;
+  border-radius: 1rem;
+  --background: #ff5b00;
+  font-family: coco;
+  button {
+    padding: 1rem;
+  }
+}
+.puntaje-butoon {
+  -webkit-box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+} /*  */
+
+.modal-claimed {
+  display: flex;
+  justify-content: center;
+  --background: tramsparent !important;
+  .ion-page {
+    background-color: transparent !important;
+  }
+}
+
+@font-face {
+  font-family: coco;
+  src: url("assets/font/Coco.otf");
+}
+p,
+span,
+h2,
+ion-label,
+ion-text,
+ion-card-title {
+  font-family: coco;
+}
+.awardsDetail {
+  --border-radius: 1rem;
+  //.modal-wrapper{--border-radius: 1rem};
+}
+.present-game {
+  --border-radius: 1rem;
+}
+.user-alert {
+  .alert-head {
+    text-align: center;
+  }
+
+  .succes {
+    width: 100%;
+    color: #62c454;
+    border: #62c454 solid;
+    border-radius: 1rem;
+    span {
+      justify-content: center;
+    }
+  }
+  .error {
+    width: 100%;
+    color: #c83300;
+    border: #c83300 solid;
+    border-radius: 1rem;
+    span {
+      justify-content: center;
+    }
+  }
+}

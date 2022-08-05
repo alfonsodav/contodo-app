@@ -1,0 +1,22 @@
+.frame{
+  margin: 1rem;
+  height: 95%;
+  .player{
+    height: 100%;
+    display: flex;
+    video{
+      margin: auto;
+      width: 100%
+    }
+
+  }
+}
+.fondo-trivia {
+  background-position: left 50% top 0 !important;
+  background-image: url("/../../../assets/images/fondo-trivia.png");
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  --background: transparent !important;
+}
