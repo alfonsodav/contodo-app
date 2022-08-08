@@ -8,14 +8,7 @@ import { ToastController } from '@ionic/angular';
 
 import {
   AdMob,
-  AdMobBannerSize,
-  AdMobRewardItem,
   AdOptions,
-  BannerAdOptions,
-  BannerAdPluginEvents,
-  BannerAdSize,
-  InterstitialAdPluginEvents,
-  RewardAdPluginEvents,
 } from '@capacitor-community/admob';
 import { ReplaySubject } from 'rxjs';
 import { interstitialOptions } from '../shared/ad.options';
@@ -32,6 +25,13 @@ export class GamesPage implements OnInit{
   slideOpts = {
     initialSlide: 0,
     speed: 400,
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    }
     /*  pagination: {
       type: 'bullets'
     } */

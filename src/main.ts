@@ -8,16 +8,17 @@ import { initializeApp } from 'firebase/app';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCS1TNBYP76BC-T5YUL4brRgscqRV4twsM',
+  apiKey: 'AIzaSyA8ksFDmhO2Vtik2nDOrQbS2uIAPTOG-_8',
   authDomain: 'con-todo-a7dcb.firebaseapp.com',
   projectId: 'con-todo-a7dcb',
   storageBucket: 'con-todo-a7dcb.appspot.com',
   messagingSenderId: '1075847961326',
-  appId: '1:1075847961326:android:205bf1d4de708c6ab271ff'
+  appId: '1:1075847961326:web:e102ef60b0248f39b271ff',
+  measurementId: 'G-R27MKVWXB9',
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+//const app = initializeApp(firebaseConfig);
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
@@ -26,7 +27,8 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.log(err));
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.log(err));
 
 defineCustomElements(window);

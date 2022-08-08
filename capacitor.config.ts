@@ -13,7 +13,7 @@ const config: CapacitorConfig = {
       nativeAuth: false,
       properties: {
         google: {
-            hostedDomain: 'my-custom-domain.com'
+            hostedDomain: 'https://www.televicentro.com'
         }
       },
       permissions: {
