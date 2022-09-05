@@ -13,12 +13,13 @@
       <ion-button class="facebook ion-margin-bottom" expand="block" (click)="loginFacebook()" mode="ios"
         [disabled]="!condiciones">
         <ion-icon name="logo-facebook"></ion-icon>
-        <span class="ion-margin-start">Ingresa con tu cuenta de facebook</span>
+        <span class="text-login">Ingresa con tu cuenta de facebook</span>
       </ion-button>
       <ion-button class="google ion-margin-bottom" expand="block" (click)="loginGoogle()" color="light" mode="ios"
         [disabled]="!condiciones">
-        <ion-thumbnail class="icon-google"><img src="assets/icon/google.png"/> </ion-thumbnail>
-        <span class="ion-margin-start">Ingresa con tu cuenta de Google</span>
+        <ion-icon name="logo-google"></ion-icon>
+       <!--  <ion-thumbnail class="icon-google"><img src="assets/icon/google.png"/> </ion-thumbnail> -->
+        <span class="text-login">Ingresa con tu cuenta de Google</span>
       </ion-button>
       <div class="conditions ion-margin-bottom">
         <ion-checkbox [(ngModel)]="condiciones"></ion-checkbox>

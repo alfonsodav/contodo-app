@@ -68,7 +68,7 @@ export class AuthService {
       offline: true,
     });
     const resConfirmed = await this.auth.signInWithCredential(
-      firebase.auth.FacebookAuthProvider.credential(res.idToken)
+      firebase.auth.FacebookAuthProvider.credential(res.accessToken)
     );
     this.saveDataAndroid(resConfirmed, res);
   }

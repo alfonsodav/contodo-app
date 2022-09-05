@@ -10,7 +10,7 @@
     <ion-buttons style="margin: auto; display: flex; justify-content: center;">
       <ion-button color="light" shape="round" strong="true" size="large" fill="solid" style="font-size: 20px;" class="puntaje-butoon"
         ><ion-icon src="assets/images/coins-pile.svg"></ion-icon
-      ><span  style="color: #400A81;">{{user.puntaje | currency:' ':'symbol-narrow'}}</span></ion-button>
+      ><span  style="color: #400A81;">{{user?.puntaje | currency:' ':'symbol-narrow'}}</span></ion-button>
     </ion-buttons>
     <ion-avatar slot="end" class="ion-margin">
       <ion-img [src]="user?.picture || 'assets/images/contodo.png'"></ion-img>

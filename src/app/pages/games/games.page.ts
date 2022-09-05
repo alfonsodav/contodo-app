@@ -25,13 +25,7 @@ export class GamesPage implements OnInit{
   slideOpts = {
     initialSlide: 0,
     speed: 400,
-    coverflowEffect: {
-      rotate: 50,
-      stretch: 0,
-      depth: 100,
-      modifier: 1,
-      slideShadows: true,
-    }
+    direction: 'vertical'
     /*  pagination: {
       type: 'bullets'
     } */

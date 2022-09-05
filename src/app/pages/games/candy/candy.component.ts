@@ -47,7 +47,8 @@ export class CandyComponent implements OnInit {
       initialBreakpoint: 0.9,
       componentProps: {
         user: this.user,
-        url: this.game.url
+        url: this.game.url,
+        idGame: this.game.id_Game
       },
     });
     await modal.present();
@@ -71,13 +72,13 @@ export class CandyComponent implements OnInit {
 @Component({
   selector: 'app-frame',
   template: `<ion-content class="fondo-game">
-    <div class="content">
+    <div style="display: flex; height: 100%;">
       <iframe
         class="frame"
         [src]="
           sanitizer.bypassSecurityTrustResourceUrl(
             url + 'index.html?id_gamer=' +
-              user?.id_Gamer
+              user?.id_Gamer + '&game=' + idGame
           )
         "
       >
@@ -89,6 +90,7 @@ export class CandyComponent implements OnInit {
 export class FrameComponent implements OnInit{
   @Input() user;
   @Input() url;
+  @Input() idGame;
   constructor(
     public modalController: ModalController,
     public sanitizer: DomSanitizer
