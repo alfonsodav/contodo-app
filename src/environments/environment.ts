@@ -6,8 +6,7 @@ export const environment = {
   production: false,
   webClientId:
     '1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com',
-  //api: 'http://38.17.54.101/contodo_API/',
-  api: 'http://208.51.60.82/contodo_API/'
+  api: 'https://contodoapp.com/contodo_API/',
 };
 export const firebaseConfig = {
   apiKey: 'AIzaSyA8ksFDmhO2Vtik2nDOrQbS2uIAPTOG-_8',
@@ -27,3 +26,4 @@ export const firebaseConfig = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+//Secret Key: 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
