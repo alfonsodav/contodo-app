@@ -3,7 +3,7 @@ import { Platform } from '@ionic/angular';
 /* import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx'; */
 //import {AppsFlyer ,AFInit} from 'appsflyer-capacitor-plugin';
-//import { AdMob, AdMobInitializationOptions } from '@capacitor-community/admob';
+import { AdMob, AdMobInitializationOptions } from '@capacitor-community/admob';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -19,7 +19,7 @@ export class AppComponent {
   ];
 
   constructor(private platform: Platform) {
-    //this.initializeApp();
+    this.initializeApp();
     /* this.platform.ready().then(() => {
         const afConfig: AFInit = {
           appID: 'io.spicyrocket.contodo', // replace with your app ID.
@@ -40,9 +40,9 @@ export class AppComponent {
       }); */
   }
 
-  /* initializeApp() {
+  initializeApp() {
     this.platform.ready().then(() => {
       AdMob.initialize({ initializeForTesting: true });
     });
-  } */
+  }
 }
