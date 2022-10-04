@@ -1,0 +1,109 @@
+<ion-content>
+  <div class="content">
+    <div class="trazado-blanco"></div>
+    <div style="display: flex; justify-content: center;">
+      <div class="border-1">
+        <div class="border-2">
+          <ion-avatar class="picture">
+            <img [src]="user?.picture|| 'assets/images/contodo.png'" />
+          </ion-avatar>
+        </div>
+      </div>
+      <!-- <ion-avatar class="picture">
+        <img [src]="user?.picture|| 'assets/images/contodo.png'" />
+      </ion-avatar> -->
+    </div>
+    <div style="margin-top: 1rem">
+      <ion-text color="light">
+        <h2 style="margin-top: 1rem; margin-left: 1rem">{{user?.name}}</h2>
+        <h4 style="margin-left: 2rem">TE DAMOS LA BIENVENIDA</h4>
+      </ion-text>
+      <div class="px-5">
+        <ion-card class="card-border">
+          <ion-card-content>
+            <div>
+              <ion-item lines="none">
+                <ion-icon name="mail" slot="start"></ion-icon>
+                <ion-text>
+                  <ion-label>Tu correo electronico:</ion-label>
+                  <h5>{{user?.email}}</h5>
+                </ion-text>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <ion-card class="card-border">
+          <ion-card-content>
+            <div>
+              <ion-item lines="none">
+                <ion-icon name="call" slot="start"></ion-icon>
+                <ion-text>
+                  <ion-label>Tu número de teléfono:</ion-label>
+                  <ion-input
+                    [(ngModel)]="user.phone"
+                    type="tel"
+                    placeholder="Telefono"
+                  ></ion-input>
+                </ion-text>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <!-- <ion-card class="card-border">
+          <ion-card-content>
+            <div>
+              <ion-item lines="none">
+                <ion-icon name="home" slot="start"></ion-icon>
+                <ion-text>
+                  <ion-label>Tu dirección:</ion-label>
+                  <ion-input
+                    [(ngModel)]="user.direction"
+                    type="text"
+                    placeholder="Dirección"
+                  ></ion-input>
+                </ion-text>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card> -->
+        <ion-card class="card-border">
+          <ion-card-content>
+            <div>
+              <ion-item button="true" id="open-date-input" lines="none">
+                <ion-icon name="calendar-clear" slot="start"></ion-icon>
+                <ion-text>
+                  <ion-label>Tu fecha de nacimiento:</ion-label>
+                  <h5 *ngIf="user.birtDate">{{user.birtDate}}</h5>
+                </ion-text>
+                <ion-popover trigger="open-date-input" show-backdrop="false">
+                  <ng-template>
+                    <ion-datetime
+                      #popoverDatetime
+                      presentation="date"
+                      (ionChange)="formatDate(popoverDatetime.value)"
+                    ></ion-datetime>
+                  </ng-template>
+                </ion-popover>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </div>
+      <div class="px-5">
+        <ion-button
+          class="contodo-button"
+          (click)="continue()"
+          size="large" 
+          expand="block"
+          color="light"
+          ><span style="color: #FF5A00">Continuar</span></ion-button
+        >
+      </div>
+    </div>
+  </div>
+</ion-content>
+<!-- 
+    svg width="390" height="460" xmlns="http://www.w3.org/2000/svg"
+
+        path( d="M -30 160 C 20 80, 80 180, 100 100" stroke="black" fill="transparent")
+ -->

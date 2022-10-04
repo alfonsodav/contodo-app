@@ -1,0 +1,77 @@
+.fondo-rojo {
+  background-position: left 50% top 0 !important;
+  background-image: url("/../../../assets/images/fondo-rojo.svg");
+  background-size: cover;
+  /*  width: 100%;
+  position: fixed;
+  height: 100%; */
+}
+.content {
+  --background: transparent !important;
+  --offset-top: -20% !important;
+}
+.title {
+  p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+  h2 {
+    margin-left: 3rem;
+  }
+}
+.list {
+  height: 90%;
+  position: absolute;
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+  overflow-y: auto;
+  .items {
+    ion-thumbnail {
+      margin: 5px;
+      width: 25%;
+      height: 80%;
+      img {
+        border-radius: 10px;
+      }
+    }
+    ion-text {
+      padding-left: 1rem;
+      h5 {
+        font-size: 22px;
+      }
+      h2 {
+        font-size: 30px;
+      }
+    }
+  }
+}
+
+.details {
+  border-radius: 1rem;
+  text-align: center;
+  color: #400a81;
+  overflow-y: auto;
+  ion-title{
+    margin: 1rem;
+  }
+  img {
+    border-radius: 1rem;
+    margin-top: 5px;
+    width: 80%;
+    margin: auto;
+  }
+  .detail-content {
+    text-align: center;
+    color: #400a81;
+  }
+  .button{
+    margin: 1rem;
+    color: #FF5A00;
+    span{
+      color: #FF5A00 !important;
+    }
+  }
+}
+.no-font{
+  font-family: 'Helvetica Neue', --ion-font-family !important;
+}

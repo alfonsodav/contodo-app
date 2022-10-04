@@ -1,0 +1,50 @@
+<!-- 
+<app-header></app-header>
+
+<ion-content class="fondo-trivia">
+  <ng-container *ngIf="false">
+    
+  </ng-container> -->
+<ng-container>
+  <div class="content">
+   <!--  <iframe
+      *ngIf="gameKandy"
+      class="frame"
+      [src]="
+        sanitizer.bypassSecurityTrustResourceUrl(
+          'http://38.17.54.101/kandy-crush/index.html?id_gamer=' +
+            user?.id_Gamer
+        )
+      "
+    >
+    </iframe> -->
+
+    <ion-card
+      *ngIf="!gameKandy"
+      class="card-border"
+      (click)="presentGame()"
+    >
+      <ion-card-content>
+        <div>
+          <ion-item lines="none">
+            <ion-icon slot="start" name="diamond-outline"></ion-icon>
+            <ion-label>{{game.nombre}}</ion-label>
+          </ion-item>
+        </div>
+      </ion-card-content>
+    </ion-card>
+    <!-- <ion-card class="card-border" (click)="openCapacitorSite()">
+      <ion-card-content>
+        <div>
+          <ion-item lines="none">
+            <ion-icon slot="start" name="diamond-outline"></ion-icon>
+            <ion-label> Kandy crush</ion-label>
+          </ion-item>
+        </div>
+       
+      </ion-card-content>
+    </ion-card>  -->
+  </div>
+</ng-container>
+
+

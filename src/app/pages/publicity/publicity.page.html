@@ -1,0 +1,29 @@
+<ion-content class="fondo-trivia">
+  <ion-card class="frame">
+    <div *ngIf="!dataMedia.id_Publicidad_Media" style="display: flex">
+      <ion-spinner style="margin: auto"></ion-spinner>
+    </div>
+    <div *ngIf="dataMedia.id_Publicidad_Media" class="player">
+      <ng-container #image *ngIf="typeImg.includes(dataMedia.tipo)">
+        <ion-img
+          [src]="'data:image/' + dataMedia.tipo.slice(1) + ';base64,' + dataMedia.dataB"
+        ></ion-img>
+      </ng-container>
+      <div style="display: flex;" *ngIf="!typeImg.includes(dataMedia.tipo)" #videoPlayer>
+        <!-- *ngIf="!typeImg.includes(dataMedia.tipo)" (play)="endVideo()" onended="endVideo()" --; else videoPlayer"-->
+        <video autoplay id="publicityVideo" controls #videoPublicity (play)="playing(videoPublicity)">
+          <source
+            [src]="sanitizer.bypassSecurityTrustResourceUrl('data:video/' + dataMedia.tipo.slice(1) + ';base64,' + dataMedia.dataB)"
+            [type]="'video/' + dataMedia.tipo.slice(1)"
+          />
+          <!-- + dataMedia.tipo.slice(1) -->
+          <p>Formato de video no soportado</p>
+        </video>
+      </div>
+    </div>
+  </ion-card>
+  <!--   <div id="publicPlayer">
+
+  </div>
+ -->
+</ion-content>

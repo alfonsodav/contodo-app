@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<ion-content class="fondo-rojo content">
+  <div>
+    <ion-text class="title" color="warning">
+      <h2>Mis Premios</h2>
+     <!--  <p>Tenemos una gran variedad de premios para ti!</p> -->
+    </ion-text>
+    <ion-card class="ion-no-margin list">
+      <ion-card-content>
+        <div *ngIf="listAwards.length < 1 && !ended" style="display: flex">
+          <ion-spinner style="margin: auto;" ></ion-spinner>
+        </div>
+        <h3 style="text-align: center;" *ngIf="listAwards.length === 0 && ended">Gana puntos para reclamar premios</h3>
+        <ion-list>
+          <ng-container *ngFor="let item of listAwards">
+            <ion-card style="padding: 1rem; border-radius: 1rem;" [style]="item.reclamado ? 'opacity: 0.5': 'opacity: 1'">
+              
+            <!-- <p style="text-align: right"><sub></sub></p> -->
+            <ion-item
+            class="items"
+            lines="none"
+          >
+            <ion-thumbnail>
+              <img [src]="'data:image/jpg;base64,' + item.premio.img" />
+            </ion-thumbnail>
+            <ion-text color="tertiary">
+              <h5>{{item.premio.nombre}}</h5>
+              <sub class="no-font">{{item.premio.descripcion}}</sub>
+              <h4 class="no-font">PIN:{{ item.pin_Reclamo }}</h4>
+             <!--  <h2>
+                <ion-icon [src]="'assets/images/coin.svg'"></ion-icon>
+                {{item.premio.costo | currency}}
+              </h2> -->
+            </ion-text>
+          </ion-item>
+            <sub class="no-font" style="margin-left: 1rem; color: #400A81;">Estado:{{item.reclamado ? ' Entregado': ' No entregado'}}</sub>
+          </ion-card>
+          </ng-container>         
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

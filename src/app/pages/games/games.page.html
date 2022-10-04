@@ -1,0 +1,28 @@
+<app-header></app-header>
+
+<ion-content class="fondo-trivia">
+  <ion-slides
+    pager="true"
+    [options]="slideOpts"
+    (ionSlideDidChange)="getPuntaje(0, $event)"
+  >
+    <ion-slide *ngFor="let item of gameList">
+      <app-candy [game]="item"></app-candy>
+
+      <ion-card class="puntaje">
+        <ion-thumbnail class="logo">
+          <img src="assets/images/logo.png" />
+        </ion-thumbnail>
+        <ion-text>
+          <h1>{{game.puntaje_Game || 'Aun no ganas puntos en este juego'}}</h1>
+          <sub> Puntos ganados en este juego </sub>
+        </ion-text>
+        <ion-icon
+          class="icon-game"
+          name="game-controller-outline"
+          size="large"
+        ></ion-icon>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

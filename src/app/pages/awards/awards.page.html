@@ -1,0 +1,47 @@
+<app-header></app-header>
+
+<ion-content class="fondo-rojo content">
+  <div>
+    <ion-text class="title" color="warning">
+      <h2>Premios</h2>
+      <p>Tenemos una gran variedad de premios para ti!</p>
+    </ion-text>
+    <ion-card class="ion-no-margin list">
+      <ion-card-content>
+        <div *ngIf="listAwards.length < 1" style="display: flex">
+          <ion-spinner style="margin: auto;" ></ion-spinner>
+        </div>
+        <ion-list>
+          <ion-item
+            class="items"
+            lines="none"
+            *ngFor="let item of listAwards"
+            (click)="showDetail(item)"
+          >
+            <ion-thumbnail>
+              <img [src]="'data:image/jpg;base64,' + item.img" />
+            </ion-thumbnail>
+            <ion-text color="tertiary">
+              <h5>{{item.nombre}}</h5>
+              <sub>{{item.descripcion}}</sub>
+              <h2>
+                <ion-icon [src]="'assets/images/coin.svg'"></ion-icon>
+                {{item.costo | currency}}
+              </h2>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+<!--   <ion-modal
+    [isOpen]="show"
+    [swipeToClose]="true"
+    [breakpoints]="[0.1, 0.5, 1]"
+    [initialBreakpoint]="0.5"
+  >
+    <ng-template>
+      
+    </ng-template>
+  </ion-modal> -->
+</ion-content>

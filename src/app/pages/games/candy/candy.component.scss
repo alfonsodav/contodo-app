@@ -1,0 +1,55 @@
+.fondo-trivia {
+ /*  background-position: left 50% top 0 !important;
+  background-image: url("/../../../assets/images/fondo-trivia.png");
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  --background: transparent !important;
+  --offset-top: -20% !important; */
+}
+.fondo-game {
+  /* background-position: left 50% top 0 !important;
+  background-image: url("/../../../assets/images/fondo-trivia.png");
+  background-size: cover;
+  width: 100%;
+  position: fixed;
+  height: 100%;
+  --background: transparent !important; */
+}
+.content {
+  display: flex;
+  height: 70%;
+}
+.card-border {
+  border: #ff5b00 solid 5pt;
+  border-radius: 50px;
+  margin: auto;
+  ion-card-content {
+    border: #cb14bf solid 5pt;
+    border-radius: 40px;
+    padding: 0;
+    div {
+      border: #ffff38 solid 5pt;
+      border-radius: 2rem;
+      padding: 14px;
+      background-image: url("../../../../assets/images/fondo2.svg");
+      background-size: cover;
+      ion-item {
+        --background: transparent !important;
+        color: white;
+      }
+      ion-icon {
+        background: white;
+        color: #400a81;
+        border-radius: 100%;
+        padding: 5px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.frame{
+  width: 100%;
+  border: none;
+}

@@ -1,0 +1,62 @@
+<ion-header class="header" style="height: 55%">
+  <ion-img class="logo" src="assets/images/contodo.png">
+  </ion-img>
+ </ion-header>
+<ion-content class="ion-no-margin">
+  <ion-card class="login-card ion-no-margin ion-text-center ion-padding-vertical" style="height: 100%">
+    <ion-card-header class="card-header">
+      <ion-card-title class="ion-text-center" style="font-size: 2rem;">
+        <b>Ingresa</b>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button class="facebook ion-margin-bottom" expand="block" (click)="loginFacebook()" mode="ios"
+        [disabled]="!condiciones">
+        <ion-icon name="logo-facebook"></ion-icon>
+        <span class="text-login">Ingresa con tu cuenta de facebook</span>
+      </ion-button>
+      <ion-button class="google ion-margin-bottom" expand="block" (click)="loginGoogle()" color="light" mode="ios"
+        [disabled]="!condiciones">
+        <ion-icon name="logo-google"></ion-icon>
+       <!--  <ion-thumbnail class="icon-google"><img src="assets/icon/google.png"/> </ion-thumbnail> -->
+        <span class="text-login">Ingresa con tu cuenta de Google</span>
+      </ion-button>
+      <div class="conditions ion-margin-bottom">
+        <ion-checkbox [(ngModel)]="condiciones"></ion-checkbox>
+        <a href="/">Acepto los términos de uso.</a>
+      </div>
+    </ion-card-content>
+    <div class="ion-margin-top" style="color: #440C8D; text-decoration: none;">
+      Derechos Reservados Con Todo. Corporación Televicentro - 2022
+    </div>
+  </ion-card>
+</ion-content>
+
+<!-- 
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+ca-app-pub-2362613737044849~9607851927
+ca-app-pub-2362613737044849/9138160201
+El ID de nuestro Google Ad Manager es: 22381527028
+ -->

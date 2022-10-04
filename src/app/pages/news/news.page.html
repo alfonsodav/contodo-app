@@ -1,0 +1,30 @@
+<app-header></app-header>
+
+<ion-content class="fondo-ondas content">
+  <div>
+    <ion-text class="title" color="warning">
+      <h2>Noticias</h2>
+      <p>Enterate de las ultimas novedades</p>
+    </ion-text>
+    <ion-card class="ion-no-margin list" >
+      <div style="display: flex;" *ngIf="newsList.length < 1">
+        <ion-spinner style="margin: auto;" ></ion-spinner>
+      </div>
+      
+      <ion-card-content>
+          <ion-card class="items" lines="none" *ngFor="let item of newsList">
+            <ion-card-header>
+              <ion-card-title>{{item.titulo}}</ion-card-title>
+            <ion-thumbnail>
+              <img [src]="'data:image/jpg;base64,' + item.img"/>
+            </ion-thumbnail>
+            </ion-card-header>
+            <ion-card-content>
+              <sub>{{item.fecha_Creacion | date}}</sub>
+              <p>{{item.descripcion}}</p>
+            </ion-card-content>
+          </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

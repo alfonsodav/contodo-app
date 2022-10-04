@@ -1,0 +1,59 @@
+<ion-card class="card">
+  <ion-icon name="close-circle-outline" color="danger" class="close" (click)="closeModal()"></ion-icon>
+  <ion-card-header>
+    <div style="display: flex">
+      <ion-img
+        style="margin: auto; width: 30%"
+        [src]="'assets/images/contodo.png'"
+      ></ion-img>
+    </div>
+    <ion-card-title class="title"
+      >¡Felicidades has canjeado {{ awards.premio.nombre }}!</ion-card-title
+    >
+  </ion-card-header>
+  <ion-card-content class="content">
+    <div style="display: flex">
+      <ion-img
+        style="width: 90%; margin: auto"
+        [src]="awards.premio.imgB64"
+      ></ion-img>
+    </div>
+    <div class="textos">
+      <p class="ion-margin">{{ awards.premio.descripcion }}</p>
+      <ion-text>
+        <h3>PIN de reclamo</h3>
+        <h4>{{ awards.pin_Reclamo }}</h4>
+        <p class="ion-margin">
+          Presenta este PIN
+          <span style="text-decoration: underline">
+            {{ awards.pin_Reclamo }}</span
+          >
+          en nuestra sucursal mas cercana para reclamar tu premio.
+        </p>
+      </ion-text>
+      <ion-button
+        [routerLink]="['/my-awards']"
+        expand="block"
+        color="danger"
+        shape="round"
+        class="ion-margin"
+      >
+        <sub>Visita la sección de Mis Premios para más detalles</sub>
+      </ion-button>
+    </div>
+    <div class="fotter">
+      <h2>Compartir</h2>
+      <div>
+        <ion-thumbnail (click)="shareFacebook()" class="logos">
+          <ion-img src="assets/icon/logo-facebook.png"></ion-img>
+        </ion-thumbnail>
+        <ion-thumbnail (click)="shareTwitter()" class="logos">
+          <ion-img src="assets/icon/logo-twitter.png"></ion-img>
+        </ion-thumbnail>
+        <ion-thumbnail (click)="shareWhatsapp()" class="logos">
+          <ion-img src="assets/icon/logo-whatsapp.png"></ion-img>
+        </ion-thumbnail>
+      </div>
+    </div>
+  </ion-card-content>
+</ion-card>

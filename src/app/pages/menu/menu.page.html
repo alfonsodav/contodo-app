@@ -1,0 +1,28 @@
+<app-header [menu]="true"></app-header>
+
+<ion-content class="fondo-azul content-menu">
+  <ion-list id="inbox-list" class="menu">
+    <div *ngFor="let p of appPages; let i = index">
+      <div
+        color="transparent"
+        [routerLink]="[p.url]"
+        lines="none"
+        
+      >
+        <ion-label>{{ p.title }}</ion-label>
+      </div>
+    </div>
+  </ion-list>
+</ion-content>
+<ion-footer class="ion-no-border footer">
+  <ion-toolbar color="transparent">
+    <ion-button
+      class="salir-button ion-margin"
+      [routerLink]="[ '/' ]"
+
+      size="large"
+      expand="block"
+      >Salir</ion-button
+    >
+  </ion-toolbar>
+</ion-footer>

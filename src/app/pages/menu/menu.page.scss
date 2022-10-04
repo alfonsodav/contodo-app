@@ -1,0 +1,25 @@
+.content-menu{
+  --background: transparent !important;
+  --offset-top: -20% !important;
+  #inbox-list{
+    background: transparent !important;
+  }
+}
+.footer{
+  position: absolute;
+  --background: transparent !important;
+  background: transparent !important;
+  bottom: 0;
+}
+.menu{
+  font-size: 2.5rem;
+  color: #FFC500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  div{
+    //margin-left: rem;
+    margin-top: 1rem;
+  }
+}
