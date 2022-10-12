@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1075847961326",
+    "project_id": "con-todo-a7dcb",
+    "storage_bucket": "con-todo-a7dcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075847961326:android:205bf1d4de708c6ab271ff",
+        "android_client_info": {
+          "package_name": "io.spicyrocket.contodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075847961326-5is3k90f19o5h2mb2cfajdlg4ug60rug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.spicyrocket.contodo",
+            "certificate_hash": "020a1289aaf97b5a274153076638d425bcfc64b4"
+          }
+        },
+        {
+          "client_id": "1075847961326-9m6mlagrnkvm2iqs02cehbuh0ssrraji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.spicyrocket.contodo",
+            "certificate_hash": "8cf6286998ef6f6e732f31c6af6d2396beb17b23"
+          }
+        },
+        {
+          "client_id": "1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCS1TNBYP76BC-T5YUL4brRgscqRV4twsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
