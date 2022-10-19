@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+//import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
-import firebase from 'firebase/compat/app';
+//import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
+//import firebase from 'firebase/compat/app';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Preferences } from '@capacitor/preferences';
+import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 
 @Injectable({
   providedIn: 'root',
@@ -29,13 +30,28 @@ export class AuthService {
   private webClientId = environment.webClientId;
 
   constructor(
-    public auth: AngularFireAuth,
-    private googlePlus: GooglePlus,
+    //public auth: AngularFireAuth,
+    //private googlePlus: GooglePlus,
     private http: HttpClient,
     public router: Router
   ) {}
 
-  async loginGoogleAndroid() {
+  async signInWithFacebook() {
+    const result = await FirebaseAuthentication.signInWithFacebook();
+    this.saveDataWeb(result);
+    return result.user;
+  }
+
+  async signInWithGoogle() {
+    const result = await FirebaseAuthentication.signInWithGoogle();
+    this.saveDataWeb(result);
+    return result.user;
+  }
+
+  async signOut() {
+    await FirebaseAuthentication.signOut();
+  }
+  /* async loginGoogleAndroid() {
     const res = await this.googlePlus.login({
       webClientId: this.webClientId,
       offline: true,
@@ -71,7 +87,7 @@ export class AuthService {
       firebase.auth.FacebookAuthProvider.credential(res.accessToken)
     );
     this.saveDataAndroid(resConfirmed, res);
-  }
+  } */
   async saveDataAndroid(resConfirmed, res) {
     const user = resConfirmed.user;
     localStorage.setItem('user', JSON.stringify(res.credential));
@@ -110,10 +126,9 @@ export class AuthService {
     this.router.navigate(['/wellcome']);
   }
   async saveDataWeb(res) {
-    console.log(res);
     const user: any = res.user;
-    localStorage.setItem('user', JSON.stringify(res.credential));
-    localStorage.setItem('token', await res.user.getIdToken());
+    localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('token', await res.credential.idToken);
     const inData = await this.getUserToEmail(user.email).catch((err) => null);
     if (inData) {
       /* this.user.id_Gamer = inData.id_Gamer;
@@ -153,10 +168,10 @@ export class AuthService {
       .catch((err) => console.log(err));
     this.router.navigate(['/wellcome']);
   }
-  logout() {
+  /* logout() {
     this.auth.signOut();
     Preferences.clear();
-  }
+  } */
   getImageUrl(imageUrl: string): Promise<any> {
     return this.http.get(imageUrl, { responseType: 'blob' }).toPromise(); // responseType: 'blob'
   }

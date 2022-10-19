@@ -9,38 +9,36 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-
   urlRetorno: string;
   datos: any;
-  condiciones= true;
+  condiciones = true;
   picture;
   name;
   email;
 
-  constructor(
-    private platform: Platform,
-    private authService: AuthService
-    ) { }
+  constructor(private platform: Platform, private authService: AuthService) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
   loginGoogle() {
     if (this.platform.is('android')) {
-      this.authService.loginGoogleAndroid();
+      //this.authService.loginGoogleAndroid();
+      this.authService.signInWithGoogle();
     } else {
-      this.authService.loginGoogleWeb();
+      //this.authService.loginGoogleWeb();
+      this.authService.signInWithGoogle();
     }
   }
   loginFacebook() {
     if (this.platform.is('android')) {
-      this.authService.loginFacebookAndroid();
+      //this.authService.loginFacebookAndroid();
+      this.authService.signInWithFacebook();
     } else {
-      this.authService.loginFacebook();
+      //this.authService.loginFacebook();
+      this.authService.signInWithFacebook();
     }
   }
 
   logout() {
-    this.authService.logout();
+    this.authService.signOut();
   }
 }

@@ -12,7 +12,7 @@ import {
 } from '@angular/fire/compat/auth';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
+//import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
 import { firebaseConfig, environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
@@ -30,7 +30,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       enabled: environment.production,
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [
@@ -40,7 +40,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       useValue: { appVerificationDisabledForTesting: true },
     },
     { provide: USE_DEVICE_LANGUAGE, useValue: true },
-    GooglePlus
+    //GooglePlus
   ],
   bootstrap: [AppComponent],
 })

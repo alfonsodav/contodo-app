@@ -3,7 +3,9 @@ import { Platform } from '@ionic/angular';
 /* import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx'; */
 //import {AppsFlyer ,AFInit} from 'appsflyer-capacitor-plugin';
-import { AdMob, AdMobInitializationOptions } from '@capacitor-community/admob';
+import { AdMob } from '@capacitor-community/admob';
+import { initializeApp } from 'firebase/app';
+import { firebaseConfig } from 'src/environments/environment';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -20,6 +22,7 @@ export class AppComponent {
 
   constructor(private platform: Platform) {
     this.initializeApp();
+    this.initialize();
     /* this.platform.ready().then(() => {
         const afConfig: AFInit = {
           appID: 'io.spicyrocket.contodo', // replace with your app ID.
@@ -44,5 +47,17 @@ export class AppComponent {
     this.platform.ready().then(() => {
       AdMob.initialize({ initializeForTesting: true });
     });
+  }
+
+  public async initialize(): Promise<void> {
+    if (this.platform.is('capacitor')) {
+      return;
+    }
+    /**
+     * Only needed if the Firebase JavaScript SDK is used.
+     *
+     * Read more: https://github.com/robingenz/capacitor-firebase/blob/main/packages/authentication/docs/firebase-js-sdk.md
+     */
+    initializeApp(firebaseConfig);
   }
 }

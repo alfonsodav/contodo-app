@@ -5,4 +5,7 @@
     <string name="package_name">io.spicyrocket.contodo</string>
     <string name="custom_url_scheme">io.spicyrocket.contodo</string>
     <string name="admob_app_id">ca-app-pub-2362613737044849~9607851927</string>
+  <string name="facebook_app_id">462699495741341</string>
+  <string name="facebook_client_token">e5984e992917a70605f06e0acfb89668</string>
+  <string name="fb_login_protocol_scheme">fb462699495741341</string>
 </resources>

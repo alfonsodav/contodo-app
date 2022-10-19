@@ -6,7 +6,6 @@ export const environment = {
   production: false,
   webClientId:
     '1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com',
-  //api: 'http://38.17.54.101/contodo_API/',
   api: 'https://contodoapp.com/contodo_API/',
 };
 export const firebaseConfig = {
@@ -18,12 +17,3 @@ export const firebaseConfig = {
   appId: '1:1075847961326:web:e102ef60b0248f39b271ff',
   measurementId: 'G-R27MKVWXB9',
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
