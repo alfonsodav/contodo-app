@@ -209,7 +209,6 @@ export class AuthService {
     console.log(user);
     const form = {
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      // eslint-disable-next-line @typescript-eslint/naming-convention
       firt_Name: user.name,
       last_Name: '',
       pass: '',
@@ -219,7 +218,7 @@ export class AuthService {
       token: '',
       birtDate: new Date(user.birtDate).toISOString(), // IMPORTANTE
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      photo_Profile_B64: this.pictureB64,
+      photo_Profile_B64: this.pictureB64 || '',
     };
     return this.http.post(this.url, form).toPromise();
   }
