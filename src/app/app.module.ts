@@ -12,7 +12,6 @@ import {
 } from '@angular/fire/compat/auth';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-//import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
 import { firebaseConfig, environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
 

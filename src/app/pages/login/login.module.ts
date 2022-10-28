@@ -10,8 +10,6 @@ import { LoginPage } from './login.page';
 // firebase
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-import { GooglePlus } from '@awesome-cordova-plugins/google-plus/index';
-
 
 @NgModule({
   imports: [
@@ -25,7 +23,6 @@ import { GooglePlus } from '@awesome-cordova-plugins/google-plus/index';
     AngularFireModule,
   ],
   declarations: [LoginPage],
-  providers: [
-  ],
+  providers: [],
 })
 export class LoginPageModule {}

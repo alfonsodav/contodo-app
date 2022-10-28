@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 //import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-//import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
 //import firebase from 'firebase/compat/app';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';

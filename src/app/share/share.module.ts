@@ -4,19 +4,11 @@ import { IonicModule } from '@ionic/angular';
 import { HeaderComponent } from './header/header.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { GooglePlus } from '@awesome-cordova-plugins/google-plus';
-
-
 
 @NgModule({
   declarations: [HeaderComponent],
-  imports: [
-    CommonModule,
-    IonicModule,
-    FormsModule,
-    RouterModule
-  ],
+  imports: [CommonModule, IonicModule, FormsModule, RouterModule],
   exports: [HeaderComponent],
-  providers: []
+  providers: [],
 })
-export class ShareModule { }
+export class ShareModule {}
