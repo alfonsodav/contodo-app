@@ -45,38 +45,18 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
-</dict>
-	<key>CFBundleURLTypes</key>
+	<key>GADIsAdManagerApp</key>
+	<true/>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-2362613737044849~9607851927</string>
+	<key>SKAdNetworkItems</key>
 	<array>
-	<dict>
-	<key>CFBundleURLSchemes</key>
-	<array>
-	   <string>fb462699495741341</string>
+	  <dict>
+	    <key>SKAdNetworkIdentifier</key>
+	    <string>cstr6suwn9.skadnetwork</string>
+	  </dict>
 	</array>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>[Why you use NSUserTracking. ex: This identifier will be used to deliver personalized ads to you.]</string>
 	</dict>
-	</array>
-	<key>FacebookAppID</key>
-	<string>462699495741341</string>
-	<key>FacebookClientToken</key>
-	<string>e5984e992917a70605f06e0acfb89668</string>
-	<key>FacebookDisplayName</key>
-	<string>Con todo</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-	<string>fbapi</string>
-	<string>fbapi20130214</string>
-	<string>fbapi20130410</string>
-	<string>fbapi20130702</string>
-	<string>fbapi20131010</string>
-	<string>fbapi20131219</string>
-	<string>fbapi20140410</string>
-	<string>fbapi20140116</string>
-	<string>fbapi20150313</string>
-	<string>fbapi20150629</string>
-	<string>fbapi20160328</string>
-	<string>fbauth</string>
-	<string>fb-messenger-share-api</string>
-	<string>fbauth2</string>
-	<string>fbshareextension</string>
-	</array>
 </plist>
