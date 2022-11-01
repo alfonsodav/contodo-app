@@ -1,13 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-//import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-//import firebase from 'firebase/compat/app';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Preferences } from '@capacitor/preferences';
-import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
+//import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 
 @Injectable({
   providedIn: 'root',
@@ -35,7 +33,7 @@ export class AuthService {
     public router: Router
   ) {}
 
-  async signInWithFacebook() {
+  /* async signInWithFacebook() {
     const result = await FirebaseAuthentication.signInWithFacebook();
     this.saveDataWeb(result);
     return result.user;
@@ -49,7 +47,7 @@ export class AuthService {
 
   async signOut() {
     await FirebaseAuthentication.signOut();
-  }
+  } */
   /* async loginGoogleAndroid() {
     const res = await this.googlePlus.login({
       webClientId: this.webClientId,

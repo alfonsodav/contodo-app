@@ -12,15 +12,14 @@ import {
 } from '@angular/fire/compat/auth';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
 import { AngularFireModule } from '@angular/fire/compat';
-import { firebaseConfig, environment } from '../environments/environment';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from 'src/environments/environment.prod';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebaseConfig),
     AngularFireAuthModule,
     IonicModule.forRoot(),
     AppRoutingModule,

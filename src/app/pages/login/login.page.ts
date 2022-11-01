@@ -20,25 +20,21 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {}
   loginGoogle() {
-    if (this.platform.is('android')) {
+    /* if (this.platform.is('android')) {
       //this.authService.loginGoogleAndroid();
       this.authService.signInWithGoogle();
     } else {
       //this.authService.loginGoogleWeb();
       this.authService.signInWithGoogle();
-    }
+    } */
   }
   loginFacebook() {
-    if (this.platform.is('android')) {
+    /*  if (this.platform.is('android')) {
       //this.authService.loginFacebookAndroid();
       this.authService.signInWithFacebook();
     } else {
       //this.authService.loginFacebook();
       this.authService.signInWithFacebook();
-    }
-  }
-
-  logout() {
-    this.authService.signOut();
+    } */
   }
 }
