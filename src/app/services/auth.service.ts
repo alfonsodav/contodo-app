@@ -139,8 +139,6 @@ export class AuthService {
     }
   }
   async saveLocal(inData) {
-    const [dia, mes, año] = inData.birtDate.split('/');
-    const birtDate = new Date(`${mes}/${dia}/${año}`).toISOString();
     this.user.id_Gamer = inData.id_Gamer;
     this.user.picture = 'data:image/jpg;base64,' + inData.photo_Profile;
     inData.picture = 'data:image/jpg;base64,' + inData.photo_Profile;
@@ -150,7 +148,7 @@ export class AuthService {
     this.user.email = inData.email;
     this.user.phone = inData.phone;
     this.user.token = inData.token;
-    this.user.birtDate = birtDate;
+    this.user.birtDate = inData.birtDate;
     const { picture, photo_Profile, ...user } = inData;
     await Preferences.set({ key: 'userdb', value: JSON.stringify(user) });
     this.user$.next({
@@ -162,6 +160,8 @@ export class AuthService {
 
   registerUser(user): Promise<any> {
     console.log(user);
+    const [dia, mes, año] = user.birtDate.split('/');
+    const birtDate = new Date(`${mes}/${dia}/${año}`).toISOString();
     const form = {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       firt_Name: user.name,
@@ -171,7 +171,7 @@ export class AuthService {
       phone: user.phone,
       direction: user.direction || '',
       token: '',
-      birtDate: new Date(user.birtDate).toISOString(), // IMPORTANTE
+      birtDate: new Date(birtDate).toISOString(), // IMPORTANTE
       // eslint-disable-next-line @typescript-eslint/naming-convention
       photo_Profile_B64: user.pictureB64 || '',
     };
