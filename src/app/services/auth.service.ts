@@ -139,6 +139,8 @@ export class AuthService {
     }
   }
   async saveLocal(inData) {
+    const [dia, mes, año] = inData.birtDate.split('/');
+    const birtDate = new Date(`${mes}/${dia}/${año}`).toISOString();
     this.user.id_Gamer = inData.id_Gamer;
     this.user.picture = 'data:image/jpg;base64,' + inData.photo_Profile;
     inData.picture = 'data:image/jpg;base64,' + inData.photo_Profile;
@@ -148,7 +150,7 @@ export class AuthService {
     this.user.email = inData.email;
     this.user.phone = inData.phone;
     this.user.token = inData.token;
-    this.user.birtDate = inData.birtDate;
+    this.user.birtDate = birtDate;
     const { picture, photo_Profile, ...user } = inData;
     await Preferences.set({ key: 'userdb', value: JSON.stringify(user) });
     this.user$.next({

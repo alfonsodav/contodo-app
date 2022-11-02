@@ -20,6 +20,7 @@ export class WellcomePage implements OnInit {
     direction: '',
     pictureB64: '',
     picture: '',
+    birtDate: '',
   };
   dateValue = '';
   constructor(
@@ -60,6 +61,19 @@ export class WellcomePage implements OnInit {
   async continue() {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { id_Gamer, ...user } = this.user;
+    if (
+      !user.pictureB64 ||
+      !user.pass ||
+      !user.phone ||
+      !user.name ||
+      !user.email ||
+      !user.birtDate
+    ) {
+      return this.createAlert(
+        'Completa los campos requeridos y selecciona una foto de perfil',
+        'error'
+      );
+    }
     const data = await this.auth.registerUser(user).catch((err) => {
       console.log(err);
       this.launchAlert();
