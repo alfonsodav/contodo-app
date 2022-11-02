@@ -58,7 +58,10 @@ export class UserPage implements OnInit {
         key: 'userdb',
         value: JSON.stringify(this.user),
       });
-      await this.createAlert('GRACIAS POR ACTUALIZAR TU INFORMACIÓN', 'succes');
+      await this.createAlert(
+        'GRACIAS POR ACTUALIZAR TU INFORMACIÓN',
+        'success'
+      );
     } catch (error) {
       console.log(error);
       await this.createAlert(
@@ -86,7 +89,7 @@ export class UserPage implements OnInit {
     this.auth.setPhoto(this.user.pictureB64, this.user).subscribe((data) => {
       console.log(data);
       if (data.id_Gamer) {
-        this.createAlert('Se actualizo tu imagen de perfil', 'succes');
+        this.createAlert('Se actualizo tu imagen de perfil', 'success');
       } else {
         this.createAlert(
           'OCURRIO UN ERROR AL ACTUALIZAR TU INFORMACIÓN',

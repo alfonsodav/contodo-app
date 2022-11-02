@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Platform } from '@ionic/angular';
+import { AlertController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -15,8 +15,12 @@ export class LoginPage implements OnInit {
   picture;
   name;
   email;
+  password;
 
-  constructor(private platform: Platform, private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private alertIon: AlertController
+  ) {}
 
   ngOnInit() {}
   loginGoogle() {
@@ -36,5 +40,43 @@ export class LoginPage implements OnInit {
       //this.authService.loginFacebook();
       this.authService.signInWithFacebook();
     } */
+  }
+  simpleLogin() {
+    if (!this.email || !this.password) {
+      return alert('Correo y contraseña obligatorios');
+    }
+    this.authService.login(this.email, this.password).subscribe(
+      (user: any) => {
+        console.log(user);
+        if (user.id_Gamer === 0) {
+          return this.createAlert(
+            'Tu usuario no se encuentra registrado',
+            'error'
+          );
+        }
+        this.authService.saveLocal(user);
+      },
+      (error) => {
+        if (error.status === 404) {
+          return this.createAlert(
+            'Tu usuario no se encuentra registrado',
+            'error'
+          );
+        } else {
+          this.createAlert(
+            'ocurrio un error inesperado, verifica tu conexion y vuelve a intentar',
+            'warn'
+          );
+        }
+      }
+    );
+  }
+  async createAlert(message, type) {
+    const myalert = await this.alertIon.create({
+      subHeader: message,
+      cssClass: 'user-alert',
+      buttons: [{ text: 'Continuar', cssClass: type, role: 'destructive' }],
+    });
+    return await myalert.present();
   }
 }

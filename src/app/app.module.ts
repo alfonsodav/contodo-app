@@ -6,29 +6,20 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import {
-  AngularFireAuthModule,
-  USE_DEVICE_LANGUAGE,
-} from '@angular/fire/compat/auth';
 import { SETTINGS as AUTH_SETTINGS } from '@angular/fire/compat/auth';
-import { AngularFireModule } from '@angular/fire/compat';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [
     BrowserModule,
-    AngularFireAuthModule,
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000',
     }),
   ],
   providers: [
@@ -37,7 +28,6 @@ import { environment } from 'src/environments/environment.prod';
       provide: AUTH_SETTINGS,
       useValue: { appVerificationDisabledForTesting: true },
     },
-    { provide: USE_DEVICE_LANGUAGE, useValue: true },
     //GooglePlus
   ],
   bootstrap: [AppComponent],

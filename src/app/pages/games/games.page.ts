@@ -78,9 +78,17 @@ export class GamesPage implements OnInit {
 
     this.gameServices
       .getPointGame(this.user.id_Gamer, this.gameList[index].id_Game ?? id)
-      .subscribe((data) => {
-        this.game = data;
-      });
+      .subscribe(
+        (data) => {
+          this.game = data;
+        },
+        (error) => {
+          if (error.status === 404) {
+            // eslint-disable-next-line @typescript-eslint/naming-convention
+            this.game = { puntaje_Game: 0 };
+          }
+        }
+      );
   }
 
   /**

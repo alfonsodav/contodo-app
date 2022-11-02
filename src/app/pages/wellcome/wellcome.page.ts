@@ -3,6 +3,7 @@ import { Preferences } from '@capacitor/preferences';
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController, IonDatetime, ModalController } from '@ionic/angular';
 import { PublicityPage } from '../publicity/publicity.page';
+import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({
   selector: 'app-wellcome',
@@ -14,8 +15,11 @@ export class WellcomePage implements OnInit {
   user: any = {
     phone: '',
     name: '',
+    pass: '',
     email: '',
     direction: '',
+    pictureB64: '',
+    picture: '',
   };
   dateValue = '';
   constructor(
@@ -25,7 +29,7 @@ export class WellcomePage implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.auth.user$.subscribe(async (data) => {
+    /* this.auth.user$.subscribe(async (data) => {
       if (!data) {
         await Preferences.get({ key: 'user' }).then(
           (user) => (this.user = JSON.parse(user.value))
@@ -35,7 +39,7 @@ export class WellcomePage implements OnInit {
       }
       this.user = data;
     });
-    console.log(this.user);
+    console.log(this.user); */
   }
   async launchAlert() {
     const alert = await this.alertIon.create({
@@ -71,6 +75,29 @@ export class WellcomePage implements OnInit {
     this.presentModal().then(() => this.auth.router.navigate(['/games']));
   }
   formatDate(value): string {
+    console.log(value);
     return (this.user.birtDate = new Date(value).toLocaleDateString());
+  }
+
+  async updatePhoto() {
+    const foto = await Camera.getPhoto({
+      resultType: CameraResultType.Base64,
+      quality: 50,
+      saveToGallery: true,
+      promptLabelHeader: 'Foto de perfil',
+      promptLabelCancel: 'Cancelar',
+      promptLabelPhoto: 'Galeria',
+      promptLabelPicture: 'Tomar foto',
+    });
+    this.user.pictureB64 = foto.base64String;
+    this.user.picture = 'data:image/jpg;base64,' + foto.base64String;
+  }
+  async createAlert(message, type) {
+    const myalert = await this.alertIon.create({
+      subHeader: message,
+      cssClass: 'user-alert',
+      buttons: [{ text: 'Continuar', cssClass: type, role: 'destructive' }],
+    });
+    return await myalert.present();
   }
 }

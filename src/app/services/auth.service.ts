@@ -24,7 +24,6 @@ export class AuthService {
   });
   url = environment.api + 'api/Gamers';
   public user$ = new BehaviorSubject<any>(null);
-  private webClientId = environment.webClientId;
 
   constructor(
     //public auth: AngularFireAuth,
@@ -33,6 +32,9 @@ export class AuthService {
     public router: Router
   ) {}
 
+  login(email, password) {
+    return this.http.post(environment.api + 'api/login', { email, password });
+  }
   /* async signInWithFacebook() {
     const result = await FirebaseAuthentication.signInWithFacebook();
     this.saveDataWeb(result);
@@ -48,43 +50,7 @@ export class AuthService {
   async signOut() {
     await FirebaseAuthentication.signOut();
   } */
-  /* async loginGoogleAndroid() {
-    const res = await this.googlePlus.login({
-      webClientId: this.webClientId,
-      offline: true,
-    });
-    const resConfirmed = await this.auth.signInWithCredential(
-      firebase.auth.GoogleAuthProvider.credential(res.idToken)
-    );
-    this.saveDataAndroid(resConfirmed, res);
-  }
-  async loginGoogleWeb() {
-    console.log('web');
-    const provider = new firebase.auth.GoogleAuthProvider();
-    provider.addScope('profile');
-    provider.addScope('email');
-    const res = await this.auth.signInWithPopup(provider);
-    console.log(res.user.photoURL);
-    this.saveDataWeb(res);
-  }
-  async loginFacebook() {
-    console.log('Login con Facebook');
-    const res = await this.auth.signInWithPopup(
-      new firebase.auth.FacebookAuthProvider()
-    );
-    this.saveDataWeb(res);
-  }
-  async loginFacebookAndroid() {
-    console.log('Login con Facebook');
-    const res = await this.googlePlus.login({
-      webClientId: this.webClientId,
-      offline: true,
-    });
-    const resConfirmed = await this.auth.signInWithCredential(
-      firebase.auth.FacebookAuthProvider.credential(res.accessToken)
-    );
-    this.saveDataAndroid(resConfirmed, res);
-  } */
+
   async saveDataAndroid(resConfirmed, res) {
     const user = resConfirmed.user;
     localStorage.setItem('user', JSON.stringify(res.credential));
@@ -128,18 +94,6 @@ export class AuthService {
     localStorage.setItem('token', await res.credential.idToken);
     const inData = await this.getUserToEmail(user.email).catch((err) => null);
     if (inData) {
-      /* this.user.id_Gamer = inData.id_Gamer;
-      this.user.picture = 'data:image/jpg;base64,' + inData.photo_Profile;
-      this.user.direction = inData.direction;
-      this.user.name = inData.firt_Name;
-      this.user.email = inData.email;
-      this.user.phone = inData.phone;
-      this.user.token = inData.token;
-      await Preferences.set({ key: 'userdb', value: JSON.stringify(inData) });
-      this.user$.next({
-        ...this.user,
-        ...inData,
-      }); */
       await this.saveLocal(inData);
       return this.router.navigate(['/games']);
     }
@@ -195,11 +149,13 @@ export class AuthService {
     this.user.phone = inData.phone;
     this.user.token = inData.token;
     this.user.birtDate = inData.birtDate;
-    await Preferences.set({ key: 'userdb', value: JSON.stringify(inData) });
+    const { picture, photo_Profile, ...user } = inData;
+    await Preferences.set({ key: 'userdb', value: JSON.stringify(user) });
     this.user$.next({
       ...this.user,
       ...inData,
     });
+    this.router.navigate(['/games']);
   }
 
   registerUser(user): Promise<any> {
@@ -208,14 +164,14 @@ export class AuthService {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       firt_Name: user.name,
       last_Name: '',
-      pass: '',
+      pass: user.pass,
       email: user.email,
       phone: user.phone,
-      direction: user.direction,
+      direction: user.direction || '',
       token: '',
       birtDate: new Date(user.birtDate).toISOString(), // IMPORTANTE
       // eslint-disable-next-line @typescript-eslint/naming-convention
-      photo_Profile_B64: this.pictureB64 || '',
+      photo_Profile_B64: user.pictureB64 || '',
     };
     return this.http.post(this.url, form).toPromise();
   }

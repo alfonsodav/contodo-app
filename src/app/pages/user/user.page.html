@@ -16,16 +16,26 @@
       <div class="border-1">
         <div class="border-2">
           <ion-avatar class="picture" (click)="updatePhoto()">
-            <ion-icon class="new-photo" name="camera-outline" size="large" ></ion-icon>
+            <ion-icon
+              class="new-photo"
+              name="camera-outline"
+              size="large"
+            ></ion-icon>
             <img [src]="user?.picture|| 'assets/images/contodo.png'" />
           </ion-avatar>
-         
         </div>
       </div>
     </div>
-    
+
     <div>
-      <ion-buttons style="margin: auto; display: flex; justify-content: center; margin-top: 1rem;">
+      <ion-buttons
+        style="
+          margin: auto;
+          display: flex;
+          justify-content: center;
+          margin-top: 1rem;
+        "
+      >
         <ion-button
           color="light"
           shape="round"
@@ -35,7 +45,7 @@
           style="font-size: 20px"
           ><ion-icon src="assets/images/coins-pile.svg"></ion-icon
           ><span style="color: #400a81"
-            >{{user.puntaje | currency:' ':'symbol-narrow'}}</span
+            >{{user?.puntaje || 0 | currency:' ':'symbol-narrow'}}</span
           ></ion-button
         >
       </ion-buttons>
@@ -83,7 +93,12 @@
                   <ion-label>Tu fecha de nacimiento:</ion-label>
                   <h5 *ngIf="user.birtDate">{{user.birtDate}}</h5>
                 </ion-text>
-                <ion-popover class="date-pike" trigger="open-date-input" show-backdrop="false" side="top">
+                <ion-popover
+                  class="date-pike"
+                  trigger="open-date-input"
+                  show-backdrop="false"
+                  side="top"
+                >
                   <ng-template>
                     <ion-datetime
                       #popoverDatetime
