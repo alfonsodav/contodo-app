@@ -216,4 +216,9 @@ export class AuthService {
       photo_Profile_B64: picture,
     });
   }
+
+  deleteUser(id) {
+    console.log('borrar', id);
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }

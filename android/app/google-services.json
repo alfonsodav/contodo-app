@@ -7,26 +7,54 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1075847961326:android:205bf1d4de708c6ab271ff",
+        "mobilesdk_app_id": "1:1075847961326:android:a4d561832d6b13f3b271ff",
         "android_client_info": {
-          "package_name": "io.spicyrocket.contodo"
+          "package_name": "huawei.spicyrocket.contodo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1075847961326-5is3k90f19o5h2mb2cfajdlg4ug60rug.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "io.spicyrocket.contodo",
-            "certificate_hash": "020a1289aaf97b5a274153076638d425bcfc64b4"
-          }
-        },
+          "client_id": "1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
         {
-          "client_id": "1075847961326-9m6mlagrnkvm2iqs02cehbuh0ssrraji.apps.googleusercontent.com",
+          "current_key": "AIzaSyCS1TNBYP76BC-T5YUL4brRgscqRV4twsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1075847961326-msfjdqlis210c97vlfjut3uqc2q4egem.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.spicyrocket.contodo"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1075847961326:android:bd2a2b902443f056b271ff",
+        "android_client_info": {
+          "package_name": "tv.spicyrocket.contodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1075847961326-aqd4t31mtkj3ehqfbpu6804176sp2t9o.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "io.spicyrocket.contodo",
-            "certificate_hash": "8cf6286998ef6f6e732f31c6af6d2396beb17b23"
+            "package_name": "tv.spicyrocket.contodo",
+            "certificate_hash": "19b6c127c0ceef6f9eac93258f128010b0ebaf68"
           }
         },
         {
@@ -45,6 +73,13 @@
             {
               "client_id": "1075847961326-7dpusk7uoa3g9h7f1bltv1s362e4ovks.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "1075847961326-msfjdqlis210c97vlfjut3uqc2q4egem.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.spicyrocket.contodo"
+              }
             }
           ]
         }

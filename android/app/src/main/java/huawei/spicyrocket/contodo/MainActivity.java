@@ -1,4 +1,4 @@
-package io.spicyrocket.contodo;
+package huawei.spicyrocket.contodo;
 import android.os.Bundle;
 
 import com.getcapacitor.BridgeActivity;

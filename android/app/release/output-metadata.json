@@ -4,7 +4,7 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "io.spicyrocket.contodo",
+  "applicationId": "huawei.spicyrocket.contodo",
   "variantName": "release",
   "elements": [
     {

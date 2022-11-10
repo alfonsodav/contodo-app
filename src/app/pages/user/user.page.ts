@@ -99,4 +99,29 @@ export class UserPage implements OnInit {
     });
     //console.log(foto);
   }
+  async modalDeleteUser() {
+    const alert = await this.ionAlert.create({
+      header:
+        'Estas Seguro que desea eliminar su cuenta y toda su información? ',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          role: 'confirm',
+        },
+      ],
+    });
+
+    await alert.present();
+    const { role } = await alert.onDidDismiss();
+    if (role === 'confirm') {
+      this.auth
+        .deleteUser(this.user.id_Gamer)
+        .subscribe((data) => console.log(data));
+      this.auth.router.navigate(['/']);
+    }
+  }
 }
