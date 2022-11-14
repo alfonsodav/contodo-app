@@ -20,7 +20,7 @@ export class WellcomePage implements OnInit {
     direction: '',
     pictureB64: '',
     picture: '',
-    birtDate: '',
+    birtDate: '2001-10-01T04:00:00.000Z',
   };
   dateValue = '';
   constructor(
@@ -61,18 +61,11 @@ export class WellcomePage implements OnInit {
   async continue() {
     // eslint-disable-next-line @typescript-eslint/naming-convention
     const { id_Gamer, ...user } = this.user;
-    if (
-      !user.pictureB64 ||
-      !user.pass ||
-      !user.phone ||
-      !user.name ||
-      !user.email ||
-      !user.birtDate
-    ) {
-      return this.createAlert(
-        'Completa los campos requeridos y selecciona una foto de perfil',
-        'error'
-      );
+    /* !user.pictureB64 || */
+    /* !user.phone || */
+    /* !user.birtDate */
+    if (!user.pass || !user.name || !user.email) {
+      return this.createAlert('Completa los campos requeridos', 'error');
     }
     const data = await this.auth.registerUser(user).catch((err) => {
       console.log(err);

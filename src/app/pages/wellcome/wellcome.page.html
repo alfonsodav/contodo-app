@@ -4,7 +4,8 @@
     <div style="display: flex; justify-content: center">
       <div class="border-1">
         <div class="border-2">
-          <ion-avatar class="picture" (click)="updatePhoto()">
+          <!-- <ion-avatar class="picture" (click)="updatePhoto()"> -->
+          <ion-avatar class="picture">
             <ion-icon
               class="new-photo"
               name="camera-outline"
@@ -64,7 +65,7 @@
             </div>
           </ion-card-content>
         </ion-card>
-        <ion-card class="card-border">
+        <!--  <ion-card class="card-border">
           <ion-card-content>
             <div>
               <ion-item button="true" id="open-date-input" lines="none">
@@ -101,8 +102,8 @@
                 </ion-text>
               </ion-item>
             </div>
-          </ion-card-content>
-        </ion-card>
+          </ion-card-content> 
+        </ion-card>-->
         <!-- <ion-card class="card-border">
           <ion-card-content>
             <div>
@@ -121,16 +122,23 @@
           </ion-card-content>
         </ion-card> -->
       </div>
-      <div class="px-5">
+      <div class="px-5 action-buttons">
+        <ion-button
+          class="contodo-button"
+          [routerLink]="'/'"
+          size="large"
+          color="medium"
+          ><span>Regresar</span></ion-button
+        >
         <ion-button
           class="contodo-button"
           (click)="continue()"
           size="large"
-          expand="block"
           color="light"
-          ><span style="color: #ff5a00">Continuar</span></ion-button
+          ><span style="color: #62c454">Continuar</span></ion-button
         >
       </div>
+      <div class="px-5"></div>
     </div>
   </div>
 </ion-content>

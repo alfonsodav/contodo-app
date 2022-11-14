@@ -161,17 +161,17 @@ export class AuthService {
   registerUser(user): Promise<any> {
     console.log(user);
     const [dia, mes, año] = user.birtDate.split('/');
-    const birtDate = new Date(`${mes}/${dia}/${año}`).toISOString();
+    //const birtDate = new Date(`${mes}/${dia}/${año}`).toISOString();
     const form = {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       firt_Name: user.name,
       last_Name: '',
       pass: user.pass,
       email: user.email,
-      phone: user.phone,
+      phone: user.phone || '12345678',
       direction: user.direction || '',
       token: '',
-      birtDate: new Date(birtDate).toISOString(), // IMPORTANTE
+      birtDate: '2001-10-01T04:00:00.000Z', //new Date(birtDate).toISOString(), // IMPORTANTE
       // eslint-disable-next-line @typescript-eslint/naming-convention
       photo_Profile_B64: user.pictureB64 || '',
     };
