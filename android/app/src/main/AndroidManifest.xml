@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="huawei.spicyrocket.contodo">
+    package="tv.spicyrocket.contodo">
 
     <application
         android:allowBackup="true"
@@ -37,7 +37,7 @@
 
         <activity
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-            android:name="huawei.spicyrocket.contodo.MainActivity"
+            android:name="tv.spicyrocket.contodo.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBarLaunch"
             android:launchMode="singleTask"
