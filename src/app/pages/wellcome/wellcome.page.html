@@ -1,10 +1,10 @@
 <ion-content>
   <div class="content">
     <div class="trazado-blanco"></div>
-    <div style="display: flex; justify-content: center">
+    <!-- <div style="display: flex; justify-content: center">
       <div class="border-1">
         <div class="border-2">
-          <!-- <ion-avatar class="picture" (click)="updatePhoto()"> -->
+          <!- <ion-avatar class="picture" (click)="updatePhoto()"> ->
           <ion-avatar class="picture">
             <ion-icon
               class="new-photo"
@@ -14,12 +14,12 @@
             <img [src]="user?.picture|| 'assets/images/contodo.png'" />
           </ion-avatar>
         </div>
-      </div>
-    </div>
-    <div style="margin-top: 1rem">
+      </div> 
+    </div>-->
+    <div style="padding-top: 6rem">
       <ion-text color="light">
         <h4 style="margin-left: 2rem">TE DAMOS LA BIENVENIDA</h4>
-        <sub>Por favor completa los campos</sub>
+        <sub style="margin-left: 2rem">Por favor completa los campos</sub>
       </ion-text>
       <div class="px-5">
         <ion-card class="card-border">
@@ -128,7 +128,7 @@
           [routerLink]="'/'"
           size="large"
           color="medium"
-          ><span>Regresar</span></ion-button
+          ><span>Cancelar</span></ion-button
         >
         <ion-button
           class="contodo-button"

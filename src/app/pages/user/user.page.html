@@ -13,19 +13,19 @@
   </div>
   <div class="content">
     <div style="display: flex; justify-content: center; position: relative">
-      <div class="border-1">
+      <!-- <div class="border-1">
         <div class="border-2">
-          <!-- <ion-avatar class="picture" (click)="updatePhoto()"> -->
+          
           <ion-avatar class="picture">
-            <!-- <ion-icon
+            <!- <ion-icon
               class="new-photo"
               name="camera-outline"
               size="large"
-            ></ion-icon> -->
+            ></ion-icon> ->
             <img src="assets/images/contodo.png" />
           </ion-avatar>
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div>
@@ -43,7 +43,7 @@
           strong="true"
           size="large"
           fill="solid"
-          style="font-size: 20px"
+          style="font-size: 20px; margin-bottom: 6rem"
           ><ion-icon src="assets/images/coins-pile.svg"></ion-icon
           ><span style="color: #400a81"
             >{{user?.puntaje || 0 | currency:' ':'symbol-narrow'}}</span
@@ -54,7 +54,7 @@
         <h2 style="margin-top: 1rem; margin-left: 1rem">{{user?.name}}</h2>
       </ion-text>
       <div class="px-5">
-        <ion-card class="card-border">
+        <!-- <ion-card class="card-border">
           <ion-card-content>
             <div>
               <ion-item lines="none">
@@ -71,7 +71,7 @@
               </ion-item>
             </div>
           </ion-card-content>
-        </ion-card>
+        </ion-card> -->
         <ion-card class="card-border">
           <ion-card-content>
             <div>
@@ -85,7 +85,18 @@
             </div>
           </ion-card-content>
         </ion-card>
-        <ion-card class="card-border">
+        <ion-card class="card-border" (click)="changePassword()">
+          <ion-card-content>
+            <div>
+              <ion-item lines="none">
+                <ion-icon name="key" slot="start"></ion-icon>
+
+                <ion-label>Cambiar Contraseña:</ion-label>
+              </ion-item>
+            </div>
+          </ion-card-content>
+        </ion-card>
+        <!-- <ion-card class="card-border">
           <ion-card-content>
             <div>
               <ion-item button="true" id="open-date-input" lines="none">
@@ -111,7 +122,7 @@
               </ion-item>
             </div>
           </ion-card-content>
-        </ion-card>
+        </ion-card> -->
         <!-- <ion-card class="card-border">
           <ion-card-content>
             <div>
@@ -145,8 +156,8 @@
           (click)="modalDeleteUser()"
           size="large"
           expand="block"
-          color="danger"
-          ><span>Eliminar cuenta</span></ion-button
+          color="warning"
+          ><span>Eliminar Cuenta</span></ion-button
         >
       </div>
     </div>

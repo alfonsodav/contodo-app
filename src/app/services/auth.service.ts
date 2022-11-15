@@ -217,6 +217,15 @@ export class AuthService {
     });
   }
 
+  changePassword(data) {
+    const params = {
+      email: data[0],
+      password: data[1],
+      nuevoPassword: data[2],
+    };
+    return this.http.post(environment.api + 'api/changePassword', params);
+  }
+
   deleteUser(id) {
     console.log('borrar', id);
     return this.http.delete(`${this.url}/${id}`);

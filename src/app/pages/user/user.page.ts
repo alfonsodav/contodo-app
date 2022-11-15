@@ -124,4 +124,62 @@ export class UserPage implements OnInit {
       this.auth.router.navigate(['/']);
     }
   }
+  async changePassword() {
+    const alert = await this.ionAlert.create({
+      header: 'Completa la informacion',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Confirmar',
+          role: 'confirm',
+        },
+      ],
+      inputs: [
+        {
+          id: 'email',
+          label: 'Correo electronico',
+          placeholder: 'email@mail.com',
+          type: 'email',
+        },
+        {
+          id: 'oldpass',
+          label: 'Contraseña actual',
+          type: 'password',
+          placeholder: 'Contraseña actual',
+          attributes: {
+            minlength: 8,
+            maxlength: 10,
+          },
+        },
+        {
+          id: 'newpass',
+          label: 'Contraseña nueva',
+          type: 'password',
+          placeholder: 'Contraseña nueva',
+          attributes: {
+            minlength: 8,
+            maxlength: 10,
+          },
+        },
+      ],
+    });
+
+    await alert.present();
+    const { role, data } = await alert.onDidDismiss();
+    console.log(data);
+    if (role === 'confirm') {
+      this.auth.changePassword(data.values).subscribe(
+        (res: any) =>
+          this.createAlert('Contraseña cambiada satisfactoriamente', 'success'),
+        (err) =>
+          this.createAlert(
+            'Ocurrio un error, verifique los datos e intente nuevamente',
+            'error'
+          )
+      );
+    }
+  }
 }
