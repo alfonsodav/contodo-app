@@ -3,12 +3,7 @@
 <ion-content class="fondo-azul content-menu">
   <ion-list id="inbox-list" class="menu">
     <div *ngFor="let p of appPages; let i = index">
-      <div
-        color="transparent"
-        [routerLink]="[p.url]"
-        lines="none"
-        
-      >
+      <div color="transparent" [routerLink]="[p.url]" lines="none">
         <ion-label>{{ p.title }}</ion-label>
       </div>
     </div>
@@ -16,13 +11,14 @@
 </ion-content>
 <ion-footer class="ion-no-border footer">
   <ion-toolbar color="transparent">
+    <app-rules></app-rules>
     <ion-button
       class="salir-button ion-margin"
       [routerLink]="[ '/' ]"
-
       size="large"
       expand="block"
-      >Salir</ion-button
+      color="danger"
+      >SALIR</ion-button
     >
   </ion-toolbar>
 </ion-footer>

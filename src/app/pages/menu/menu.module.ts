@@ -8,6 +8,7 @@ import { MenuPageRoutingModule } from './menu-routing.module';
 
 import { MenuPage } from './menu.page';
 import { ShareModule } from 'src/app/share/share.module';
+import { RulesComponent } from 'src/app/share/rules/rules.component';
 
 @NgModule({
   imports: [
@@ -15,8 +16,8 @@ import { ShareModule } from 'src/app/share/share.module';
     FormsModule,
     IonicModule,
     MenuPageRoutingModule,
-    ShareModule
+    ShareModule,
   ],
-  declarations: [MenuPage]
+  declarations: [MenuPage, RulesComponent],
 })
 export class MenuPageModule {}

@@ -1,0 +1,26 @@
+<div>
+  <ion-button id="open-modal" class="ion-margin" size="large" expand="block"
+    >REGLAMENTO APP CON TODO</ion-button
+  >
+  <ion-modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>REGLAMENTO DE CON TODO</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="confirm()" [strong]="true">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <div>
+          <iframe
+            class="info"
+            src="assets/reglament-app-con-todo.pdf"
+            width="100%"
+          ></iframe>
+        </div>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</div>
