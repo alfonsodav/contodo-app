@@ -1,14 +1,20 @@
 <div>
-  <ion-button id="open-modal" class="ion-margin" size="large" expand="block"
+  <ion-button id="open-modal" class="ion-margin" expand="block"
     >POLITICAS Y REGLAMENTO DE USO DE LA APP</ion-button
   >
   <ion-modal trigger="open-modal">
     <ng-template>
       <ion-header>
         <ion-toolbar>
-          <ion-title>POLITICAS Y REGLAMENTO DE USO DE LA APP</ion-title>
+          <ion-label
+            ><h2 style="text-align: center">
+              POLITICAS Y REGLAMENTO DE USO DE LA APP
+            </h2></ion-label
+          >
           <ion-buttons slot="end">
-            <ion-button (click)="confirm()" [strong]="true">Cerrar</ion-button>
+            <ion-button (click)="confirm()" [strong]="true"
+              >Continuar</ion-button
+            >
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
