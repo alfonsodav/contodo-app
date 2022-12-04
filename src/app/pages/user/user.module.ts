@@ -19,4 +19,4 @@ import { ShareModule } from 'src/app/share/share.module';
   ],
   declarations: [UserPage]
 })
-export class UserPageModule {}
+export class UserPageModule { }

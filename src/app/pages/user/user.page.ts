@@ -17,7 +17,7 @@ export class UserPage implements OnInit {
     birtDate: '',
     pictureB64: '',
   };
-  constructor(private auth: AuthService, private ionAlert: AlertController) {}
+  constructor(private auth: AuthService, private ionAlert: AlertController) { }
 
   ngOnInit() {
     this.auth.user$.subscribe(async (data) => {

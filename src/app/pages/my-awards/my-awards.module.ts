@@ -19,4 +19,4 @@ import { ShareModule } from 'src/app/share/share.module';
   ],
   declarations: [MyAwardsPage]
 })
-export class MyAwardsPageModule {}
+export class MyAwardsPageModule { }

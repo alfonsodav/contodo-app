@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AlertController, Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { Preferences } from '@capacitor/preferences';
 
 @Component({
   selector: 'app-login',
@@ -19,10 +20,24 @@ export class LoginPage implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private alertIon: AlertController
+    private alertIon: AlertController,
+    private router: Router
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.autologin();
+  }
+
+  async autologin() {
+    await Preferences.get({ key: 'userdb' })
+      .then((user) => {
+        if (user.value) {
+          console.log(user);
+          this.router.navigate(['/games']);
+        }
+      })
+      .catch((error) => console.log(error));
+  }
   loginGoogle() {
     /* if (this.platform.is('android')) {
       //this.authService.loginGoogleAndroid();

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { Preferences } from '@capacitor/preferences';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.page.html',
@@ -13,9 +14,12 @@ export class MenuPage implements OnInit {
     { title: 'Noticias', url: '/news' },
     { title: 'Mi perfil', url: '/user' },
   ];
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  async logout() {
+    await Preferences.clear();
+    this.router.navigate(['/']);
   }
-
 }

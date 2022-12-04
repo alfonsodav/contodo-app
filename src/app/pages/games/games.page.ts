@@ -2,7 +2,6 @@ import { Component, NgZone, OnInit } from '@angular/core';
 import { Preferences } from '@capacitor/preferences';
 import { GamesService } from 'src/app/services/games.service';
 
-import { ViewWillEnter, ViewWillLeave } from '@ionic/angular';
 import { PluginListenerHandle } from '@capacitor/core';
 import { ToastController } from '@ionic/angular';
 
@@ -19,6 +18,7 @@ export class GamesPage implements OnInit {
   game: any = {};
   user;
   gameList = [];
+  pointRefres = false;
   slideOpts = {
     initialSlide: 0,
     speed: 400,

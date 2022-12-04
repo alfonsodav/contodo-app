@@ -20,4 +20,4 @@ import { RulesComponent } from 'src/app/share/rules/rules.component';
   ],
   declarations: [MenuPage, RulesComponent],
 })
-export class MenuPageModule {}
+export class MenuPageModule { }

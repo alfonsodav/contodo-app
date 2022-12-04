@@ -19,7 +19,7 @@ export class MyAwardsPage implements OnInit {
     private auth: AuthService,
     public modalController: ModalController,
     public toastController: ToastController
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getAdwards();

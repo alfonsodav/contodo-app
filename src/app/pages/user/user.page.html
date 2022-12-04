@@ -2,12 +2,12 @@
   <div class="trazado-blanco ion-no-border" color="transparent">
     <ion-toolbar color="transparent">
       <ion-buttons slot="start">
-        <ion-button [routerLink]="['/menu']"
-          ><ion-icon
+        <ion-button [routerLink]="['/menu']">
+          <ion-icon
             name="menu"
             style="color: #400a81; font-size: 32px"
-          ></ion-icon
-        ></ion-button>
+          ></ion-icon>
+        </ion-button>
       </ion-buttons>
     </ion-toolbar>
   </div>
@@ -15,7 +15,7 @@
     <div style="display: flex; justify-content: center; position: relative">
       <!-- <div class="border-1">
         <div class="border-2">
-          
+
           <ion-avatar class="picture">
             <!- <ion-icon
               class="new-photo"
@@ -44,11 +44,12 @@
           size="large"
           fill="solid"
           style="font-size: 20px; margin-bottom: 6rem"
-          ><ion-icon src="assets/images/coins-pile.svg"></ion-icon
+        >
+          <ion-icon src="assets/images/coins-pile.svg"></ion-icon
           ><span style="color: #400a81"
             >{{user?.puntaje || 0 | currency:' ':'symbol-narrow'}}</span
-          ></ion-button
-        >
+          >
+        </ion-button>
       </ion-buttons>
       <ion-text color="light">
         <h2 style="margin-top: 1rem; margin-left: 1rem">{{user?.name}}</h2>
@@ -78,7 +79,7 @@
               <ion-item lines="none">
                 <ion-icon name="mail" slot="start"></ion-icon>
                 <ion-text>
-                  <ion-label>Tu correo electronico:</ion-label>
+                  <ion-label>Tu correo electrónico:</ion-label>
                   <h5>{{user?.email}}</h5>
                 </ion-text>
               </ion-item>
@@ -157,8 +158,8 @@
           size="large"
           expand="block"
           color="warning"
-          ><span>Eliminar Cuenta</span></ion-button
-        >
+          ><span>Eliminar Cuenta</span>
+        </ion-button>
       </div>
     </div>
   </div>

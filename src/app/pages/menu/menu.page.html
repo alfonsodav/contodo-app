@@ -14,7 +14,7 @@
     <app-rules></app-rules>
     <ion-button
       class="salir-button ion-margin"
-      [routerLink]="[ '/' ]"
+      (click)="logout()"
       size="large"
       expand="block"
       color="danger"
