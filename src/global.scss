@@ -16,7 +16,7 @@
 @import "~@ionic/angular/css/normalize.css";
 @import "~@ionic/angular/css/structure.css";
 @import "~@ionic/angular/css/typography.css";
-@import '~@ionic/angular/css/display.css';
+@import "~@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "~@ionic/angular/css/padding.css";
@@ -24,3 +24,27 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: "coco";
+
+  src: url("/assets/font/Coco.otf");
+}
+@font-face {
+  font-family: "unbounded";
+
+  src: url("/assets/font/Unbounded.ttf");
+}
+body {
+  font-family: unbounded !important;
+  --ion-font-family: unbounded;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+.menu-item,
+.coco {
+  font-family: coco !important;
+}

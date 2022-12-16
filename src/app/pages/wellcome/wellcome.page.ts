@@ -73,7 +73,7 @@ export class WellcomePage implements OnInit {
     });
     console.log(data);
     if (!data || data.id_Gamer === 0) {
-      this.launchAlert();
+      return this.launchAlert();
     }
     await Preferences.set({ key: 'user', value: JSON.stringify(this.user) });
     this.auth.user.id = data.id_Gamer;

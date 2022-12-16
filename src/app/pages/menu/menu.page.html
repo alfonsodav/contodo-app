@@ -4,7 +4,7 @@
   <ion-list id="inbox-list" class="menu">
     <div *ngFor="let p of appPages; let i = index">
       <div color="transparent" [routerLink]="[p.url]" lines="none">
-        <ion-label>{{ p.title }}</ion-label>
+        <ion-label class="menu-item">{{ p.title }}</ion-label>
       </div>
     </div>
   </ion-list>

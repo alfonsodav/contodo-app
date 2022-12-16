@@ -19,9 +19,11 @@
         class="puntaje-butoon"
         (click)="toastLaunch()"
         ><ion-icon src="assets/images/coins-pile.svg"></ion-icon
-        ><span style="color: #400a81">{{
-          user?.puntaje | currency : " " : "symbol-narrow"
-        }}</span></ion-button
+        ><span
+          class="coco ion-margin"
+          style="color: #400a81; font-size: 1.5rem"
+          >{{ user?.puntaje }}</span
+        ></ion-button
       >
     </ion-buttons>
     <ion-avatar slot="end" class="ion-margin">

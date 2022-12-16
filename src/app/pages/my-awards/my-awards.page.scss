@@ -16,7 +16,7 @@
     margin-right: 1rem;
   }
   h2 {
-    margin-left: 3rem;
+    text-align: center;
   }
 }
 .list {
@@ -51,7 +51,7 @@
   text-align: center;
   color: #400a81;
   overflow-y: auto;
-  ion-title{
+  ion-title {
     margin: 1rem;
   }
   img {
@@ -64,14 +64,14 @@
     text-align: center;
     color: #400a81;
   }
-  .button{
+  .button {
     margin: 1rem;
-    color: #FF5A00;
-    span{
-      color: #FF5A00 !important;
+    color: #ff5a00;
+    span {
+      color: #ff5a00 !important;
     }
   }
 }
-.no-font{
-  font-family: 'Helvetica Neue', --ion-font-family !important;
+.no-font {
+  font-family: "Helvetica Neue", --ion-font-family !important;
 }
